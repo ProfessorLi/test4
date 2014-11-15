@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html lang="utf-8">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <link rel="stylesheet" href="../dist/idangerous.swiper.css">
+  <style>
+/* Demo Styles */
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+}
+.red-slide {
+  background: #ca4040;
+}
+.blue-slide {
+  background: #4390ee;
+}
+.orange-slide {
+  background: #ff8604;
+}
+.green-slide {
+  background: #49a430;
+}
+.pink-slide {
+  background: #973e76;
+}
+.swiper-slide .title {
+  font-size: 42px;
+  margin-top: 30%;
+  margin-bottom: 0;
+  line-height: 45px;
+}
+.pagination {
+  position: absolute;
+  z-index: 20;
+  left: 10px;
+  top: 10px;
+}
+.swiper-pagination-switch {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #555;
+  margin: 0 0px 5px;
+  opacity: 0.8;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.swiper-visible-switch {
+  background: #aaa;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+  </style>
+<script src="js/jquery.min.js"></script>
+<script src="../dist/idangerous.swiper.min.js"></script>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide red-slide">
+        <div class="title" style="display:block;">致胡猫熊</div>
+        <p>向上推看下一页</p>
+      </div>
+      <div class="swiper-slide blue-slide">
+        <div class="title" id="p1title" style="position:relative;top:150px;">感情说不清</div>
+      </div>
+      <div class="swiper-slide orange-slide">        
+      	<div class="title" id="p2title" style="position:relative;right:150px;">缘分道不明</div>
+      </div>
+      <div class="swiper-slide green-slide">      	
+      	<div class="title" id="p3title" style="position:relative;bottom:150px;">我们结成伴</div>
+      </div>
+      <div class="swiper-slide pink-slide">      	
+      	<div class="title" id="p4title" style="position:relative;left:150px;">快乐一起行</div>
+      	<img src="img/o.png" id="p4img" style="display:none;"/>
+      </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+<script>
+var mySwiper = new Swiper('.swiper-container',{
+  pagination: '.pagination',
+  paginationClickable: true,
+  mode: 'vertical',
+	onSlideChangeStart: function(){
+      func_animate(mySwiper.activeLoopIndex);     
+    }
+});
+
+</script>
+</body>
+</html>
